@@ -3,7 +3,7 @@
 /**
  * len_list - checks and returns the
  * length of a list
- * @h: pointer to the list
+ * @x: pointer to the list
  *
  * Return: length of list
  */
@@ -22,7 +22,7 @@ int len_list(listint_t *x)
 /**
  * insertion_sort_list - Using the Insert Sort algorithm to sort a list
  * @list: double pointer to the list to sort
- * 
+ *
  */
 
 void insertion_sort_list(listint_t **list)
