@@ -24,7 +24,7 @@ void swap(int *a, int *b)
  */
 int partition(int *array, int left, int right, size_t size)
 {
-	int tmp, i;
+	int i;
 	int j;
 
 	i = left - 1;
