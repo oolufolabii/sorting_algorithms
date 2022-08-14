@@ -1,5 +1,20 @@
 #include "sort.h"
 
+
+/**
+ * quick_sort - sorts an array with the Quicksort algorithm
+ * @array: array of ints to sort
+ * @size: size of the array
+ */
+void quick_sort(int *array, size_t size)
+{
+	if (size < 2)
+		return;
+
+	quick_recursion(array, 0, (int)size - 1, size);
+}
+
+
 /**
  * swap - a swap function
  * 
@@ -73,16 +88,3 @@ int partition(int *array, int left, int right, size_t size)
 	return (i + 1);
 }
 
-
-/**
- * quick_sort - sorts an array with the Quicksort algorithm
- * @array: array of ints to sort
- * @size: size of the array
- */
-void quick_sort(int *array, size_t size)
-{
-	if (size < 2)
-		return;
-
-	quick_recursion(array, 0, (int)size - 1, size);
-}
