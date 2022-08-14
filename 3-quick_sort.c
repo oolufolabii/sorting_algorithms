@@ -80,7 +80,7 @@ int partition(int *array, int left, int right, size_t size)
 
 	if (array[right] < array[i + 1])
 	{
-		swap(&array[i+1], &array[right]);
+		swap(&array[i + 1], &array[right]);
 		print_array(array, size);
 	}
 
