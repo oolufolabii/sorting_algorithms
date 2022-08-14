@@ -17,7 +17,7 @@ void quick_sort(int *array, size_t size)
 
 /**
  * swap - a swap function
- * 
+ *
  * @a: a pointer to a
  * @b: a pointer to b
  */
@@ -72,7 +72,7 @@ int partition(int *array, int left, int right, size_t size)
 			if (i != j)
 			{
 				swap(&array[i], &array[j]);
-				
+
 				print_array(array, size);
 			}
 		}
@@ -80,11 +80,9 @@ int partition(int *array, int left, int right, size_t size)
 
 	if (array[right] < array[i + 1])
 	{
-		
 		swap(&array[i+1], &array[right]);
 		print_array(array, size);
 	}
 
 	return (i + 1);
 }
-
