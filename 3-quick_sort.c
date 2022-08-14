@@ -1,5 +1,6 @@
 #include "sort.h"
 
+
 /**
  * quick_sort - sorts an array with the Quicksort algorithm
  * @array: array of ints to sort
@@ -13,8 +14,23 @@ void quick_sort(int *array, size_t size)
 	quick_recursion(array, 0, (int)size - 1, size);
 }
 
+
 /**
- * quick_recursion - helper function for Quicksort
+ * swap - a swap function
+ * 
+ * @a: a pointer to a
+ * @b: a pointer to b
+ */
+void swap(int *a, int *b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+
+/**
+ * quick_recursion - mini function for Quicksort
  * @array: array to sort
  * @left: index of the left element
  * @right: index of the right element
@@ -22,24 +38,24 @@ void quick_sort(int *array, size_t size)
  */
 void quick_recursion(int *array, int left, int right, size_t size)
 {
-	int piv;
+	int pivot;
 
 	if (left < right)
 	{
-		piv = partition(array, left, right, size);
-		quick_recursion(array, left, piv - 1, size);
-		quick_recursion(array, piv + 1, right, size);
+		pivot = partition(array, left, right, size);
+		quick_recursion(array, left, pivot - 1, size);
+		quick_recursion(array, pivot + 1, right, size);
 	}
 }
 
 /**
- * partition - gives a piv index for Quicksort
- * @array: array to find the piv in
+ * partition - gives a pivot index for Quicksort
+ * @array: array to find the pivot in
  * @left: index of the left element
  * @right: index of the right element
  * @size: size of the array
  *
- * Return: the index of the piv element
+ * Return: the index of the pivot element
  */
 int partition(int *array, int left, int right, size_t size)
 {
@@ -55,9 +71,8 @@ int partition(int *array, int left, int right, size_t size)
 			i++;
 			if (i != j)
 			{
-				tmp = array[i];
-				array[i] = array[j];
-				array[j] = tmp;
+				swap(&array[i], &array[j]);
+				
 				print_array(array, size);
 			}
 		}
@@ -65,11 +80,11 @@ int partition(int *array, int left, int right, size_t size)
 
 	if (array[right] < array[i + 1])
 	{
-		tmp = array[i + 1];
-		array[i + 1] = array[right];
-		array[right] = tmp;
+		
+		swap(&array[i+1], &array[right]);
 		print_array(array, size);
 	}
 
 	return (i + 1);
 }
+
