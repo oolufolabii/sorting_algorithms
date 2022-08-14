@@ -1,20 +1,5 @@
 #include "sort.h"
 
-
-/**
- * quick_sort - sorts an array with the Quicksort algorithm
- * @array: array of ints to sort
- * @size: size of the array
- */
-void quick_sort(int *array, size_t size)
-{
-	if (size < 2)
-		return;
-
-	quick_recursion(array, 0, (int)size - 1, size);
-}
-
-
 /**
  * swap - a swap function
  *
@@ -26,26 +11,6 @@ void swap(int *a, int *b)
 	int temp = *a;
 	*a = *b;
 	*b = temp;
-}
-
-
-/**
- * quick_recursion - mini function for Quicksort
- * @array: array to sort
- * @left: index of the left element
- * @right: index of the right element
- * @size: size of the array
- */
-void quick_recursion(int *array, int left, int right, size_t size)
-{
-	int pivot;
-
-	if (left < right)
-	{
-		pivot = partition(array, left, right, size);
-		quick_recursion(array, left, pivot - 1, size);
-		quick_recursion(array, pivot + 1, right, size);
-	}
 }
 
 /**
@@ -85,4 +50,36 @@ int partition(int *array, int left, int right, size_t size)
 	}
 
 	return (i + 1);
+}
+
+/**
+ * quick_recursion - mini function for Quicksort
+ * @array: array to sort
+ * @left: index of the left element
+ * @right: index of the right element
+ * @size: size of the array
+ */
+void quick_recursion(int *array, int left, int right, size_t size)
+{
+	int pivot;
+
+	if (left < right)
+	{
+		pivot = partition(array, left, right, size);
+		quick_recursion(array, left, pivot - 1, size);
+		quick_recursion(array, pivot + 1, right, size);
+	}
+}
+
+/**
+ * quick_sort - sorts an array with the Quicksort algorithm
+ * @array: array of ints to sort
+ * @size: size of the array
+ */
+void quick_sort(int *array, size_t size)
+{
+	if (size < 2)
+		return;
+
+	quick_recursion(array, 0, (int)size - 1, size);
 }
