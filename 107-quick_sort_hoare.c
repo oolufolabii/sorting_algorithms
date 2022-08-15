@@ -18,12 +18,10 @@ int partition(int *array, int left, int right, size_t size)
 	j = right + 1;
 	while (1)
 	{
-		do
-		{
+		do{
 			i++;
 		} while (array[i] < pivot);
-		do
-		{
+		do{
 			j--;
 		} while (array[j] > pivot);
 		if (i >= j)
