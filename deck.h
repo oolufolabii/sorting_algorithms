@@ -4,6 +4,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
+/**
+ * enum kind_e - list of diffent card shapes 
+ * 
+ */
 typedef enum kind_e
 {
 	SPADE = 0,
