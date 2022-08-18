@@ -6,8 +6,9 @@
 
 
 /**
- * enum kind_e - list of diffent card shapes 
- * 
+ * enum kind_e - list of diffent card shapes
+ * @SPADE: a shape
+ * @HEART: a shape
  */
 typedef enum kind_e
 {
